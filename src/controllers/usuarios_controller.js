@@ -1,4 +1,5 @@
 import Usuarios from "../models/Usuarios.js";
+import jwt from "jsonwebtoken"
 
 const registro = async (req,res) =>{
     try {
