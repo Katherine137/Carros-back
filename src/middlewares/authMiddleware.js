@@ -13,10 +13,10 @@ const verificarTokenJWT = async (req, res, next) => {
         const token = authorization.split(" ")[1]
         const { id } = jwt.verify(token, process.env.JWT_SECRET)
         
-        const usuariosBDD = await Usuarios.findById(id).lean().select("-password")
-        if (!usuariosBDD) return res.status(401).json({ msg: "Usuario no encontrado" })
+        const UsuariosBDD = await Usuarios.findById(id).lean().select("-password")
+        if (!UsuariosBDD) return res.status(401).json({ msg: "Usuario no encontrado" })
         
-        req.usuarioHeader = usuariosBDD
+        req.UsuarioHeader = UsuariosBDD
         next()
     } catch (error) {
         console.log(error)
