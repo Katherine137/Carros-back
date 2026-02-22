@@ -4,8 +4,8 @@ const router = Router()
 
 router.post('/Vehiculos', crearVehiculos)
 router.get('/listarVe', listarVehiculos)
-router.get('obtenerVe', obtenerVehiculosPorID)
-router.put('/actualizarVe', actualizarVehiculos)
-router.delete('/eliminarVe', eliminarVehiculos)
+router.get('/obtenerVe/:id', obtenerVehiculosPorID)
+router.put('/actualizarVe/:id', actualizarVehiculos)
+router.delete('/eliminarVe/:id', eliminarVehiculos)
 
 export default router

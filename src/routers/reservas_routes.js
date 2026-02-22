@@ -4,7 +4,7 @@ const router = Router()
 
 router.post('/Reservas', crearReservas)
 router.get('/listarRe', listarReservas)
-router.put('/actualizarRe', actualizarReservas)
-router.delete('/eliminarRe', eliminarReservas)
+router.put('/actualizarRe/:id', actualizarReservas)
+router.delete('/eliminarRe/:id', eliminarReservas)
 
 export default router
