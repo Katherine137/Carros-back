@@ -27,7 +27,7 @@ const crearVehiculos = async (req,res) =>{
 const listarVehiculos = async (req,res) =>{
     try {
         const vehiculos = await Vehiculos.find().sort({createdAT: -1})
-        res.json(vehiculos)
+        res.json({message: "Vehiculos", vehiculos})
     } catch (error) {
         res.status(500).json({message: "Error al obtener vehiculos", error:error.message})
     }
@@ -44,7 +44,7 @@ const actualizarVehiculos = async (req,res) =>{
         if (!vehiculoActualizado) {
             return res.status(404).json({message: "Vehiculo no encontrado"})
         }
-        res.json(vehiculoActualizado)
+        res.json({message: "Vehiculo actualizado correctamente", vehiculoActualizado})
     } catch (error) {
         res.status(500).json({message: "Error al actualizar el vehiculo", error:error.message})
     }
@@ -57,7 +57,7 @@ const eliminarVehiculos = async (req,res) =>{
         if (!vehiculoEliminado) {
             return res.status(404).json({message: "Vehiculo no encontrado"})
         }
-        res.json(vehiculoEliminado)
+        res.json({message: "Vehiculo eliminado correctamente", vehiculoEliminado})
     } catch (error) {
         res.status(500).json({message: "Error al eliminar el vehiculo", error:error.message})
     }
@@ -65,7 +65,7 @@ const eliminarVehiculos = async (req,res) =>{
 
 const obtenerVehiculosPorID = async (req,res) =>{
     const vehiculo = await Vehiculos.findById(req.params.id)
-    res.json(vehiculo)
+    res.json({message: "Vehiculo", vehiculo})
 }
 
 export{

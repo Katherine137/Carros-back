@@ -27,7 +27,7 @@ const crearClientes = async (req,res) =>{
 const listarClientes = async (req,res) =>{
     try {
         const cliente = await Clientes.find().sort({createdAt: -1})
-        res.json(cliente)
+        res.json({message: "Clientes", cliente})
     } catch (error) {
         res.status(500).json({message: "Error al obtener clientes", error:error.message})
     }
@@ -44,7 +44,7 @@ const actualizarClientes = async (req,res) =>{
         if (!clienteActualizado){
             return res.status(404).json({message: "Cliente no encontrado"})
         }
-        res.json(clienteActualizado)
+        res.json({message: "Cliente actualizado correctamente", clienteActualizado})
     } catch (error) {
         res.status(500).json({message: "Error al actualizar el cliente", error:error.message})
     }
@@ -57,6 +57,7 @@ const eliminarClientes =  async  (req,res) =>{
         if(!clienteEliminado){
             return res.status(404).json({message: "Cliente no enocntrado"})
         }
+        res.json({message: "Cliente eliminado correctamente", clienteEliminado})
     } catch (error) {
         res.status(500).json({message: "Error al eliminar clientes", error:error.message})
     }
@@ -64,7 +65,7 @@ const eliminarClientes =  async  (req,res) =>{
 
 const obtenerClientesPorID = async (req,res) =>{
     const clientes = await Clientes.findById(req.params.id)
-    res.json(clientes)
+    res.json({message: "Clientes", clientes})
 }
 
 export{

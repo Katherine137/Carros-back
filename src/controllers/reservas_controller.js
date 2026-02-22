@@ -23,7 +23,7 @@ const crearReservas = async  (req,res) =>{
 const listarReservas = async (req,res) =>{
     try {
         const reservas = await Reservas.find().sort({createdAt: -1})
-        res.json(reservas)
+        res.json({message: "Reservas", reservas})
     } catch (error) {
         res.status(500).json({message: "Error al obtener vehiculos", error:error.message})
     }
@@ -40,7 +40,7 @@ const actualizarReservas = async (req,res) =>{
         if (!reservaActualizada) {
             return res.status(404).json({message: "Reserva no encontrada"})
         }
-        res.json(reservaActualizada)
+        res.json({message: "Reserva actualizada correctamente", reservaActualizada})
     } catch (error) {
         res.status(500).json({message: "Error al actualizar vehiculos", error:error.message})
     }
@@ -53,6 +53,7 @@ const eliminarReservas = async (req,res) =>{
         if (!reservaEliminada) {
             return res.status(404).json({message:"Reserva no encontrada"})
         }
+        res.json({message: "Reserva eliminada correctamente", reservaEliminada})
     } catch (error) {
         res.status(500).json({message:"Error al eliminar la reserva", error:error.message})
     }
