@@ -26,7 +26,7 @@ const crearVehiculos = async (req,res) =>{
 
 const listarVehiculos = async (req,res) =>{
     try {
-        const vehiculos = await Vehiculos.findOne().sort({createdAT: -1})
+        const vehiculos = await Vehiculos.find().sort({createdAT: -1})
         res.json(vehiculos)
     } catch (error) {
         res.status(500).json({message: "Error al obtener vehiculos", error:error.message})
