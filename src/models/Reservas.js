@@ -21,6 +21,6 @@ const ReservasSchema = new Schema({
     }
 }, { 
     timestamps:true
-});
+})
 
-export default mongoose.model("Reservas",ReservasSchema);
+export default mongoose.model("Reservas",ReservasSchema)
