@@ -14,7 +14,7 @@ dotenv.config()
 app.use(express.json())
 app.use(cors())
 //variables globales
-app.set('port',process.env.PORT || 3000)
+app.set('port',process.env.PORT || 5000)
 //rutas
 app.get('/',(req,res)=> res.send("SERVER ON"))
 //ruta usuarios
