@@ -23,6 +23,8 @@ const crearReservas = async  (req,res) =>{
 const listarReservas = async (req,res) =>{
     try {
         const reservas = await Reservas.find().sort({createdAt: -1})
+            .populate("cliente")
+            .populate("vehiculo")
         res.json({message: "Reservas", reservas})
     } catch (error) {
         res.status(500).json({message: "Error al obtener vehiculos", error:error.message})
