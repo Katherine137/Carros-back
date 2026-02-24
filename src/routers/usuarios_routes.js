@@ -5,6 +5,6 @@ const router = Router()
 
 router.post('/registro', registro)
 router.post('/login', login)
-router.post('/perfil', verificarTokenJWT, perfil)
+router.get('/perfil', verificarTokenJWT, perfil)
 
 export default router
