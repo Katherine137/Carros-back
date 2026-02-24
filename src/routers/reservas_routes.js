@@ -4,7 +4,7 @@ const router = Router()
 
 router.post('/Reservas', crearReservas)
 router.get('/listarRe', listarReservas)
-router.get('/obtenerRe', obtenerReservasPorID)
+router.get('/obtenerRe/:id', obtenerReservasPorID)
 router.put('/actualizarRe/:id', actualizarReservas)
 router.delete('/eliminarRe/:id', eliminarReservas)
 
