@@ -12,7 +12,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cloudinary": "^2.9.0",
@@ -22,6 +21,7 @@
     "express-fileupload": "^1.5.2",
     "fs-extra": "^11.3.3",
     "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.1.0",
     "mongoose": "^9.2.1",
     "nodemailer": "^8.0.1",
     "socket.io": "^4.8.3",
