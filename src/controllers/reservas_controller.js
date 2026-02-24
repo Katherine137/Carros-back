@@ -61,9 +61,15 @@ const eliminarReservas = async (req,res) =>{
     }
 }
 
+const obtenerReservasPorID = async (req,res) =>{
+    const reserva = await Reservas.findById(req.params.id)
+    res.json({message: "Reserva", reserva})
+}
+
 export{
     crearReservas,
     listarReservas,
     actualizarReservas,
-    eliminarReservas
+    eliminarReservas,
+    obtenerReservasPorID
 }
