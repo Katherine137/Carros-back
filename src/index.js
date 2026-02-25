@@ -5,6 +5,7 @@ import connection from "./database.js";
 
 const startServer = async () => {
   try {
+    console.log('URI:', process.env.MONGODB_URI)
     await connection()
     app.listen(app.get('port'), () => {
       console.log(`Server ok on port ${app.get('port')}`)
